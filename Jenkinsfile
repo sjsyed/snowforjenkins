@@ -10,8 +10,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        snApplyChanges(appSysId: "${APPSYSID}", branchName: "${BRANCH}", url: "${DEVENV}", credentialsId: "${CREDENTIALS}")
-        snPublishApp(credentialsId: "${CREDENTIALS}", appSysId: "${APPSYSID}", obtainVersionAutomatically: true, url: "${DEVENV}")
+        echo "${CREDENTIALS}"
       }
     }
     stage('Test') {
