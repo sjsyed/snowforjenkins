@@ -4,7 +4,7 @@ pipeline {
     APPSYSID = '411423612fb00110c1dcfcecf699b680'
     BRANCH = "main"
     CREDENTIALS = 'SNOW'
-    DEVENV = 'https://devinstance.service-now.com/'
+    DEVENV = 'https://dev75674.service-now.com/'
     TESTSUITEID = '632e43900b20220050192f15d6673a7e'
   }
   stages {
