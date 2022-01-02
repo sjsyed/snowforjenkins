@@ -16,7 +16,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        snRunTestSuite(credentialsId: "${CREDENTIALS}", url: "${DEVENV}", testSuiteSysId: "${TESTSUITEID}", withResults: true)
+        snRunTestSuite browserName: 'Firefox', osName: 'Windows', osVersion: '10', testSuiteSysId: "${TESTSUITEID}", withResults: true
       }
     }
     stage('Deploy to Prod') {
