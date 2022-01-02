@@ -16,7 +16,6 @@ pipeline {
     }
     stage('Test') {
       steps {
-        snInstallApp(credentialsId: "${CREDENTIALS}", url: "${DEVENV}", appSysId: "${APPSYSID}")
         snRunTestSuite(credentialsId: "${CREDENTIALS}", url: "${DEVENV}", testSuiteSysId: "${TESTSUITEID}", withResults: true)
       }
     }
