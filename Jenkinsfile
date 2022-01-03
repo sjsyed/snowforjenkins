@@ -12,11 +12,13 @@ pipeline {
       steps {
         echo "${CREDENTIALS}"
         snApplyChanges(appSysId: "${APPSYSID}", branchName: "${BRANCH}", url: "${DEVENV}", credentialsId: "${CREDENTIALS}")
+        snPublishApp(credentialsId: "${CREDENTIALS}", appSysId: "${APPSYSID}", obtainVersionAutomatically: true, url: "${DEVENV}")
       }
     }
     stage('Test') {
       steps {
-        snRunTestSuite(browserName: 'Firefox', osName: 'Windows', osVersion: '10', testSuiteSysId: "${TESTSUITEID}", withResults: true)
+        snInstallApp(credentialsId: "${CREDENTIALS}", url: "${DEVENV}", appSysId: "${APPSYSID}")
+        snRunTestSuite(credentialsId: "${CREDENTIALS}", url: "${DEVENV}", testSuiteSysId: "${TESTSUITEID}", withResults: true)
       }
     }
     stage('Deploy to Prod') {
