@@ -5,7 +5,7 @@ pipeline {
     BRANCH = "main"
     CREDENTIALS = 'ServiceNow'
     DEVENV = 'https://dev75674.service-now.com/'
-    TESTSUITEID = '17a099962f300110c1dcfcecf699b621'
+    TESTSUITEID = '56b155d62f300110c1dcfcecf699b6f2'
   }
   stages {
     stage('Build') {
